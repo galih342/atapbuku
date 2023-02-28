@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>curiculum_vitae</title>
+    <link rel="stylesheet" href="gya.css">
+</head>
+<nav>
+    <div class="wrapper">
+        <div class="potobuku">
+            <img src="BUKU.jpg"/>
+        </div>
+        <div class="logo"><a href=''>ATAP KATA.</a></div>
+        <div class="menu">      
+<ul>
+<li><a href="index.html">Puisi</a></menu>
+<li><a href="cerpen.html" class="active">Cerpen</a></li>
+<li><a href="profile.html">profile</a></li>
+</ul>
+        </div>
+    </div>
+</nav>
+<section id="slw2">
+<div class="slideshow-container">
+    <div class="mySlides fade">
+        <a href="psi.html" target="_blank">
+          <img src="img1.jpg" style="width:100%">
+        </a>
+      </div>
+    
+      <div class="mySlides fade">
+        <a href="psi2.html" target="_blank">
+          <img src="img2.jpg" style="width:100%">
+        </a>
+      </div>
+    
+      <div class="mySlides fade">
+        <a href="psi3.html" target="_blank">
+          <img src="img3.jpg" style="width:100%">
+        </a>
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+  <p2>Catalog</p2>
+</section>
+  <script>
+    let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+  </script>
+<body>
+      <section id="Home">
+        <div class="homen">
+          <a href="psi.html" target="_blank">
+            <div class="potpus">
+              <img class="as" src="img1.jpg"/>
+              <P><a href="psi.html" class="pusg">CERPEN</a></P>
+            </div>
+          </a>
+  
+          <a href="psi2.html" target="_blank">
+            <div class="potpus">
+              <img class="as" src="img2.jpg"/>
+              <P><a href="psi2.html" class="pusg">CERPEN 2</a></P>
+            </div>
+          </a>
+
+          <a href="psi3.html" target="_blank">
+            <div class="potpus">
+              <img class="as" src="img3.jpg"/>
+              <P><a href="psi3.html" class="pusg">CERPEN 3</a></P>
+            </div>
+          </a>
+        </div>
+        <div class="Tbl-inst">
+          <p><a href="http://www.instagram.com/galih_gi22" class="Tbl-inst">Instagram</a></p>
+      </div>
+       </div>
+
+       
+    </div>
+</body>
+</html>
