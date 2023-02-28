@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>curiculum_vitae</title>
+    <link rel="stylesheet" href="gya.css">
+</head>
+<nav>
+    <div class="wrapper">
+        <div class="potobuku">
+            <img src="BUKU.jpg"/>
+        </div>
+        <div class="logo"><a href=''>ATAP KATA.</a></div>
+        <div class="menu">      
+<ul>
+<li><a href="#Home" class="active">Puisi</a></menu>
+<li><a href="foto.html">Cerpen</a></li>
+<li><a href="Alamat.html">Prosa</a></li>
+</ul>
+        </div>
+    </div>
+</nav>
+<section id="slw">
+<div class="slideshow-container">
+    <div class="mySlides fade">
+        <a href="cer.html" target="_blank">
+          <img src="gam1.jpeg" style="width:100%">
+        </a>
+      </div>
+    
+      <div class="mySlides fade">
+        <a href="cer2.html" target="_blank">
+          <img src="gam2.jpeg" style="width:100%">
+        </a>
+      </div>
+    
+      <div class="mySlides fade">
+        <a href="cer3.html" target="_blank">
+          <img src="gam3.jpeg" style="width:100%">
+        </a>
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+  <p1>Catalog</p1>
+</section>
+  <script>
+    let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+  </script>
+<body>
+      <section id="Home">
+        <div class="homen">
+          <a href="cer.html" target="_blank">
+            <div class="potpus">
+              <img class="as" src="gam1.jpeg"/>
+              <P><a href="cer.html" class="pusg">PUISI</a></P>
+            </div>
+          </a>
+  
+          <a href="cer2.html" target="_blank">
+            <div class="potpus">
+              <img class="as" src="gam2.jpeg"/>
+              <P><a href="cer2.html" class="pusg">PUISI 2</a></P>
+            </div>
+          </a>
+
+          <a href="cer3.html" target="_blank">
+            <div class="potpus">
+              <img class="as" src="gam3.jpeg"/>
+              <P><a href="cer2.html" class="pusg">PUISI 3</a></P>
+            </div>
+          </a>
+        </div>
+        <div class="Tbl-inst">
+          <p><a href="http://www.instagram.com/galih_gi22" class="Tbl-inst">Instagram</a></p>
+      </div>
+       </div>
+
+       
+    </div>
+</body>
+</html>
