@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Design by foolishdeveloper.com -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>3d Image Slider with Carousel using HTML & CSS</title>
+  <style media="screen">
+    body {
+  margin: 0;
+  background: #EEE;
+  user-select: none;
+  font-family: sans-serif;
+}
+
+
+#slider {
+  position: relative;
+  width: 50%;
+  height: 32vw;
+  margin: 150px auto;
+  font-family: 'Helvetica Neue', sans-serif;
+  perspective: 1400px;
+  transform-style: preserve-3d;
+}
+
+input[type=radio] {
+  position: relative;
+  top: 108%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  margin: 0 15px 0 0;
+  opacity: 0.4;
+  transform: translateX(-83px);
+  cursor: pointer;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  font-size: 50px;
+  margin-left: 50px;
+}
+
+input[type=radio]:nth-child(5) {
+  margin-right: 0px;
+}
+
+input[type=radio]:checked {
+  opacity: 1;
+}
+
+
+
+
+#slider label,
+#slider label img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  color: white;
+  font-size: 70px;
+  font-weight: bold;
+  border-radius: 3px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 400ms ease;
+}
+
+
+
+/* Slider Functionality */
+
+/* Active Slide */
+#s1:checked ~ #slide_1,
+ #s2:checked ~ #slide_2,
+  #s3:checked ~ #slide_3,
+   #s4:checked ~ #slide_4,
+    #s5:checked ~ #slide_5 {
+  box-shadow: 0 13px 26px rgba(0,0,0, 0.3), 0 12px 6px rgba(0,0,0, 0.2);
+  transform: translate3d(0%, 0, 0px);
+}
+
+/* Next Slide */
+#s1:checked ~ #slide_2,
+ #s2:checked ~ #slide_3,
+  #s3:checked ~ #slide_4,
+   #s4:checked ~ #slide_5,
+    #s5:checked ~ #slide_1 {
+  box-shadow: 0 6px 10px rgba(0,0,0, 0.3), 0 2px 2px rgba(0,0,0, 0.2);
+  transform: translate3d(20%, 0, -100px);
+}
+
+
+/* Next to Next Slide */
+#s1:checked ~ #slide_3,
+ #s2:checked ~ #slide_4,
+  #s3:checked ~ #slide_5,
+   #s4:checked ~ #slide_1,
+    #s5:checked ~ #slide_2 {
+  box-shadow: 0 1px 4px rgba(0,0,0, 0.4);
+  transform: translate3d(40%, 0, -250px);
+}
+
+/* Previous to Previous Slide */
+#s1:checked ~ #slide_4,
+ #s2:checked ~ #slide_5,
+  #s3:checked ~ #slide_1,
+   #s4:checked ~ #slide_2,
+    #s5:checked ~ #slide_3 {
+  box-shadow: 0 1px 4px rgba(0,0,0, 0.4);
+  transform: translate3d(-40%, 0, -250px);
+}
+
+/* Previous Slide */
+#s1:checked ~ #slide_5,
+ #s2:checked ~ #slide_1,
+  #s3:checked ~ #slide_2,
+   #s4:checked ~ #slide_3,
+    #s5:checked ~ #slide_4 {
+  box-shadow: 0 6px 10px rgba(0,0,0, 0.3), 0 2px 2px rgba(0,0,0, 0.2);
+  transform: translate3d(-20%, 0, -100px);
+}
+
+
+  </style>
+</head>
+<body>
+<section id="slider">
+  <input type="radio" name="slider" id="s1" checked>
+  <input type="radio" name="slider" id="s2">
+  <input type="radio" name="slider" id="s3">
+  <input type="radio" name="slider" id="s4">
+  <input type="radio" name="slider" id="s5">
+  <label for="s1" id="slide_1"><img class="slide" src="https://i.pinimg.com/originals/2b/de/de/2bdede0647e3cdf75b44ea33723201d9.jpg" alt=""></label>
+  <label for="s2" id="slide_2"><img class="slide" src="https://images6.alphacoders.com/462/thumb-1920-462371.jpg" alt=""></label>
+  <label for="s3" id="slide_3"><img class="slide" src="https://wallpaperaccess.com/full/1154341.jpg" alt=""></label>
+  <label for="s4" id="slide_4"><img class="slide" src="https://wallpapercave.com/wp/wp2634222.jpg" alt=""></label>
+  <label for="s5" id="slide_5"><img class="slide" src="https://images5.alphacoders.com/343/thumb-1920-343645.jpg" alt=""></label>
+</div>
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+</section>
+<script>
+  let slideIndex = 1;
+slide(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+slide(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+slide(slideIndex = n);
+}
+
+function slide(n) {
+let i;
+let slides = document.getElementsByClassName("slide");
+let dots = document.getElementsByClassName("dot");
+if (n > slides.length) {slideIndex = 1}
+if (n < 1) {slideIndex = slides.length}
+for (i = 0; i < slides.length; i++) {
+  slides[i].style.display = "block";
+}
+for (i = 0; i < dots.length; i++) {
+  dots[i].className = dots[i].className.replace(" active", "");
+}
+slides[slideIndex-1].style.display = "block";
+dots[slideIndex-1].className += " active";
+}
+</script>
+</section>
+
+</body>
+</html>
